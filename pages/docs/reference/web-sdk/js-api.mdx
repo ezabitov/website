@@ -126,7 +126,8 @@ rstat('getUid')
 rstat('request', service, name, params = {}): Promise<any>
 ```
 
-Обращение к сервису платформы. Сервис должен быть объявлен как `handler`.
+Обращение к сервису платформы. Можно уведомить, например, сервис персонализированного поп-апа о совершении события.
+Сервис должен быть объявлен как (`handler`)[https://rock.st/docs/reference/band-framework/python-api/].
 
 | Property          |Type       |Default    |Description
 |-------------------|-----------|-----------|------------------
@@ -206,6 +207,7 @@ rstat('onReady', function(){
 rstat('onEvent', (eventName:string, eventData:object) => void)
 ```
 
+
 Аргументы
 
 | Property          |Type       |Default    |Description
@@ -215,7 +217,7 @@ rstat('onEvent', (eventName:string, eventData:object) => void)
 
 ##### Пример обработки события
 
-Некорректно заполненная форма приведет к открытию чата с поддержкой
+Открытие чата с поддержкой в случае некорректного заполнения формы:
 
 ```javascript
 rstat('onEvent', function(name, data){
